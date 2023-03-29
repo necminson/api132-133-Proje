@@ -5,6 +5,7 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Assert;
 import org.junit.Test;
+import test_data.RegresInTestData;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -38,11 +39,10 @@ public class Homework07 extends RegresInBaseUrl {
         Map<String,String > expectedData = new HashMap<>();
         expectedData.put("name","morpheus");
         expectedData.put("job","leader");
-        expectedData.put("id","690");
-        expectedData.put("createdAt","2023-03-27T23:58:12.674Z");
+
         System.out.println("expectedData = " + expectedData);
 
-        Response response = given(spec).contentType(ContentType.JSON).body(expectedData).when().post("/{first}");
+        Response response = given(spec).body(expectedData).when().post("/{first}");
         //response.prettyPrint();
 
         Map<String,String> actualData = response.as(HashMap.class);
@@ -52,8 +52,24 @@ public class Homework07 extends RegresInBaseUrl {
         Assert.assertEquals(expectedData.get("name"),actualData.get("name"));
         Assert.assertEquals(expectedData.get("job"),actualData.get("job"));
 
-
     }
 
+    @Test
+    public void postHm02() {
+        spec.pathParam("first", "users");
 
+        Map<String, String> expectedData = new RegresInTestData().RegresInTestMethod("morpheus","leader");
+
+        System.out.println("expectedData = " + expectedData);
+
+        Response response = given(spec).body(expectedData).when().post("/{first}");
+        //response.prettyPrint();
+
+        Map<String, String> actualData = response.as(HashMap.class);
+        System.out.println("actualData = " + actualData);
+
+        Assert.assertEquals(201, response.getStatusCode());
+        Assert.assertEquals(expectedData.get("name"), actualData.get("name"));
+        Assert.assertEquals(expectedData.get("job"), actualData.get("job"));
+    }
 }
