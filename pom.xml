@@ -42,6 +42,15 @@
         <artifactId>json</artifactId>
         <version>20230227</version>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/org.codehaus.jackson/jackson-mapper-asl -->
+    <dependency>
+        <groupId>org.codehaus.jackson</groupId>
+        <artifactId>jackson-mapper-asl</artifactId>
+        <version>1.9.13</version>
+    </dependency>
+
+
+
 
 
     <dependency>

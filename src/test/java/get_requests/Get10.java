@@ -35,7 +35,7 @@ public class Get10 extends HerOkuAppBaseUrl {
     @Test
     public void get10() {
         //Set the url
-        spec.pathParams("first", "booking", "second", 38);
+        spec.pathParams("first", "booking", "second", 7234);
 
         //Set the expected data
         Map<String, String> bookingdatesMap = new HashMap<>();

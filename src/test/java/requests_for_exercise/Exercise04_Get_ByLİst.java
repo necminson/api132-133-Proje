@@ -5,14 +5,12 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.Test;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import static io.restassured.RestAssured.*;
 import static org.junit.Assert.assertEquals;
 
-public class Exercise05 extends RegresInBaseUrl {
+public class Exercise04_Get_ByLİst extends RegresInBaseUrl {
 /*
 Given
               https://reqres.in/api/unknown/

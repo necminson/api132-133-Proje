@@ -1,7 +1,6 @@
 package requests_for_exercise;
 
 import base_urls.GoRestBaseUrl;
-import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.Test;
 import test_data.GoRestTestData;
@@ -12,7 +11,7 @@ import java.util.Map;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
-public class Exercise01 extends GoRestBaseUrl {
+public class Exercise01_Get_ByMap extends GoRestBaseUrl {
         /*
     Given
        https://gorest.co.in/public/v1/users/3879
