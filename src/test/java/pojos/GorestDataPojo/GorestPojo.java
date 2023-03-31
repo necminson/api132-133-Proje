@@ -1,6 +1,7 @@
-package pojos;
+package pojos.GorestDataPojo;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import pojos.GorestDataPojo.GorestDataPojo;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class GorestPojo {

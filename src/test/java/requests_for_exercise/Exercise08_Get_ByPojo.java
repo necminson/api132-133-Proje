@@ -4,8 +4,8 @@ import base_urls.GoRestBaseUrl;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Test;
-import pojos.GorestDataPojo;
-import pojos.GorestPojo;
+import pojos.GorestDataPojo.GorestDataPojo;
+import pojos.GorestDataPojo.GorestPojo;
 
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;

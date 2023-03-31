@@ -14,7 +14,7 @@ import java.util.Map;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
-public class Exercise09_ObjectMapper_Map extends JsonPlaceHolderBaseUrl {
+public class Exercise09_Post_ByObjectMapper_Map extends JsonPlaceHolderBaseUrl {
      /*
          Given
            1) https://jsonplaceholder.typicode.com/todos
@@ -46,7 +46,7 @@ public class Exercise09_ObjectMapper_Map extends JsonPlaceHolderBaseUrl {
         System.out.println("expectedData = " + expectedData);
 
             // Send the request and get the response
-             Response response = given(spec).when().contentType(ContentType.JSON).body(expectedData).post("{1st}");
+             Response response = given(spec).when().body(expectedData).post("{1st}");
              response.prettyPrint();
 
             // Set the actual data
