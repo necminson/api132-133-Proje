@@ -41,14 +41,14 @@ public class Get12 extends GoRestBaseUrl {
 
         // send the GET request and get the response
         Response response = given(spec).get("{1st}");
-        // response.prettyPrint();
+
+      //response.prettyPrint();
 
         // Do assertions
 
         response.then().body("meta.pagination.limit", equalTo(10),
                 "meta.pagination.links.current", equalTo("https://gorest.co.in/public/v1/users?page=1"),
-                "data", hasSize(10), "data.status", hasItem("active"), "data.name", hasItems("Chandak Saini", "Fr. Rajinder Patel", "Chakor Verma")
-                );
+                "data", hasSize(10), "data.status", hasItem("active"), "data.name", hasItems("Chandak Saini", "Fr. Rajinder Patel", "Chakor Verma"));
 
 
         int numOfFemales = response.jsonPath().getList("data.findAll {it.gender=='female'}.gender").size();
@@ -58,6 +58,8 @@ public class Get12 extends GoRestBaseUrl {
 
 
         assertTrue(numOfFemales<=numOfMales);
+
+
     }
 
 }
