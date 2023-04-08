@@ -1,0 +1,24 @@
+//for assertions
+
+        //1. way: with Matchers (equalTo(), hasSize(),hasItem(),hasItems(),greaterThan()  )
+
+        //2. way: with JsonPath object  ==>  JsonPath jsonPath = response.jsonPath();
+        //         assertEquals("John",jsonPath.getString("firstname"));
+        //                             jsonPath.getInt("totalprice")
+        //   ==> groovy language ==>   List<Integer> idList = jsonPath.getList("findAll{it.id>190}.id");
+        //                             assertEquals(4, IdList.size());
+
+        //3. way: with deserialization     //set the expectedData starts with HashMap-payload
+        //      ==> HashMap ==>   Map<String,Object> expectedData = new HerOkuAppTestData().expectedDataMethod("Josh","Allen",111,true,bookingdatesMap,"super bowls");
+        //                  ==>   Map<String,Object> actualData = response.as(HashMap.class);
+        //      ==> Pojo  ==> JsonPlaceHolderPojo expectedData = new JsonPlaceHolderPojo(10,"quis eius est sint explicabo",true);
+        //                     BookingPojo actualData = response.as(BookingPojo.class);
+
+        //4. way: with object mapper
+        //       ==> objectMapperMap ==>  String json = JsonPlaceHolderTestData.expectedDataInString(10, "quis eius est sint explicabo", true);
+        //                                Map<String, Object> expectedData = ObjectMapperUtils.convertJsonToJava(json, HashMap.class);
+
+        //                                Map<String, Object> actualData = ObjectMapperUtils.convertJsonToJava(response.asString(), HashMap.class);
+
+        //       ==>objectMapperPojo ==>   JsonPlaceHolderPojo expectedData = new JsonPlaceHolderPojo(10,"quis eius est sint explicabo",true);
+        //                                  JsonPlaceHolderPojo actualData = ObjectMapperUtils.convertJsonToJava(response.asString(),JsonPlaceHolderPojo.class);
