@@ -5,17 +5,17 @@ import io.restassured.response.Response;
 import org.junit.Test;
 import pojos.HerOkuAppPojo.BookingDatesPojo;
 import pojos.HerOkuAppPojo.BookingPojo;
+
 import util.ObjectMapperUtils;
 
-import static herokuapp_smoketest.S1.id;
+import static herokuapp_smoketest.S1_Post.id;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
-import static util.AuthenticationHerOkuApp.generateToken;
 
-public class S2 extends HerOkuAppBaseUrl {
+public class S2_Put extends HerOkuAppBaseUrl {
     /*
                    Given
-                            1) "https://restful-booker.herokuapp.com/booking/{id}
+                             "https://restful-booker.herokuapp.com/booking/{id}
                    And
 
                                      {
@@ -50,6 +50,7 @@ public class S2 extends HerOkuAppBaseUrl {
 
 
     */
+
     @Test
     public void putTest(){
         // Set the URL
@@ -57,17 +58,17 @@ public class S2 extends HerOkuAppBaseUrl {
         // Set the expected data
         BookingDatesPojo bookingDates = new BookingDatesPojo("2022-01-01","2023-01-01");
         BookingPojo expectedData =  new BookingPojo("Ali","Can",222,true,bookingDates,"Lunch");
-        //System.out.println("expectedData = " + expectedData);
+       // System.out.println("expectedData = " + expectedData);
 
         // Send the PUT request and get the response
+
        Response response = given(spec).
-                                    header("Cookie","token="+generateToken()).
                                     body(expectedData).
                                     put("{1st}/{2nd}");
        // response.prettyPrint();
         // Set the actual data
         BookingPojo actualData = ObjectMapperUtils.convertJsonToJava(response.asString(), BookingPojo.class);
-        //System.out.println("actualData = " + actualData);
+       // System.out.println("actualData = " + actualData);
 
         // Do the assertion
         assertEquals(200,response.statusCode());

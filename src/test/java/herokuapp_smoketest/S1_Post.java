@@ -11,7 +11,7 @@ import util.ObjectMapperUtils;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
-public class S1 extends HerOkuAppBaseUrl {
+public class S1_Post extends HerOkuAppBaseUrl {
 /*
        Given
                              "https://restful-booker.herokuapp.com/booking
@@ -50,7 +50,7 @@ public class S1 extends HerOkuAppBaseUrl {
                                    }
 
  */
-        static int id;
+       public static int id;
     @Test
     public void postTest() {
         // Set the URL
@@ -59,14 +59,14 @@ public class S1 extends HerOkuAppBaseUrl {
         BookingDatesPojo bookingDates = new BookingDatesPojo("2022-01-01", "2023-01-01");
         BookingPojo expectedData = new BookingPojo("Veli", "Yılmaz", 111, true, bookingDates, "Breakfast");
 
-        //System.out.println("expectedData = " + expectedData);
+       // System.out.println("expectedData = " + expectedData);
         // Send the POST request and get the response
         Response response = given(spec).body(expectedData).post("{1st}");
          //response.prettyPrint();
 
         // Set the actual data
         HerOkuAppResponsePojo actualData = ObjectMapperUtils.convertJsonToJava(response.asString(), HerOkuAppResponsePojo.class);
-        //System.out.println("actualData = " + actualData);
+       // System.out.println("actualData = " + actualData);
 
         // do assertion
 
