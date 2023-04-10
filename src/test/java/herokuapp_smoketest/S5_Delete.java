@@ -9,7 +9,7 @@ import static herokuapp_smoketest.S1_Post.id;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
-public class S3_Delete extends HerOkuAppBaseUrl {
+public class S5_Delete extends HerOkuAppBaseUrl {
     /*
                    Given
                              "https://restful-booker.herokuapp.com/booking/{id}
@@ -43,7 +43,7 @@ public class S3_Delete extends HerOkuAppBaseUrl {
 
         // Do assertion
         assertEquals(201, response.statusCode());
-        assertEquals(expectedData,actualData );
+        assertEquals(expectedData, actualData);
 
     }
 

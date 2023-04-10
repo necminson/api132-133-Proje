@@ -52,33 +52,33 @@ public class S2_Put extends HerOkuAppBaseUrl {
     */
 
     @Test
-    public void putTest(){
+    public void putTest() {
         // Set the URL
-        spec.pathParams("1st","booking","2nd",id);
+        spec.pathParams("1st", "booking", "2nd", id);
         // Set the expected data
-        BookingDatesPojo bookingDates = new BookingDatesPojo("2022-01-01","2023-01-01");
-        BookingPojo expectedData =  new BookingPojo("Ali","Can",222,true,bookingDates,"Lunch");
-       // System.out.println("expectedData = " + expectedData);
+        BookingDatesPojo bookingDates = new BookingDatesPojo("2022-01-01", "2023-01-01");
+        BookingPojo expectedData = new BookingPojo("Ali", "Can", 222, true, bookingDates, "Lunch");
+        // System.out.println("expectedData = " + expectedData);
 
         // Send the PUT request and get the response
 
-       Response response = given(spec).
-                                    body(expectedData).
-                                    put("{1st}/{2nd}");
-       // response.prettyPrint();
+        Response response = given(spec).
+                body(expectedData).
+                put("{1st}/{2nd}");
+        // response.prettyPrint();
         // Set the actual data
         BookingPojo actualData = ObjectMapperUtils.convertJsonToJava(response.asString(), BookingPojo.class);
-       // System.out.println("actualData = " + actualData);
+        // System.out.println("actualData = " + actualData);
 
         // Do the assertion
-        assertEquals(200,response.statusCode());
-        assertEquals(expectedData.getFirstname(),actualData.getFirstname());
-        assertEquals(expectedData.getLastname(),actualData.getLastname());
-        assertEquals(expectedData.getTotalprice(),actualData.getTotalprice());
-        assertEquals(expectedData.getDepositpaid(),actualData.getDepositpaid());
-        assertEquals(bookingDates.getCheckin(),actualData.getBookingdates().getCheckin());
-        assertEquals(bookingDates.getCheckout(),actualData.getBookingdates().getCheckout());
-        assertEquals(expectedData.getAdditionalneeds(),actualData.getAdditionalneeds());
+        assertEquals(200, response.statusCode());
+        assertEquals(expectedData.getFirstname(), actualData.getFirstname());
+        assertEquals(expectedData.getLastname(), actualData.getLastname());
+        assertEquals(expectedData.getTotalprice(), actualData.getTotalprice());
+        assertEquals(expectedData.getDepositpaid(), actualData.getDepositpaid());
+        assertEquals(bookingDates.getCheckin(), actualData.getBookingdates().getCheckin());
+        assertEquals(bookingDates.getCheckout(), actualData.getBookingdates().getCheckout());
+        assertEquals(expectedData.getAdditionalneeds(), actualData.getAdditionalneeds());
 
     }
 }
