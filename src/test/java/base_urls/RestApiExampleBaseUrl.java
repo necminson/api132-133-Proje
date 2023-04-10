@@ -11,7 +11,10 @@ public class RestApiExampleBaseUrl {
     @Before//This method will run before each @Test methods.
     public void setUp() {
 
-        spec = new RequestSpecBuilder().setContentType(ContentType.JSON).setBaseUri("https://dummy.restapiexample.com/api/v1").build();
+        spec = new RequestSpecBuilder().
+                    setContentType(ContentType.JSON).
+                    setBaseUri("https://dummy.restapiexample.com/api/v1").
+                    build();
 
     }
 }
