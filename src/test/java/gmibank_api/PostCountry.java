@@ -1,8 +1,7 @@
-package gmiBank;
+package gmibank_api;
 
 import base_urls.GmiBankBaseUrl;
 import org.junit.Test;
-import util.AuthenticationGmiBank;
 
 public class PostCountry extends GmiBankBaseUrl {
     //https://app.swaggerhub.com/apis/yasinaniltechpro/GmiBank/0.0.1 dokümanını kullanarak

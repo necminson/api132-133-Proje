@@ -1,8 +1,8 @@
-package gmiBank.Pojos;
+package gmibank_api.Pojos;
 
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
-import java.util.List;
+import java.util.ArrayList;
 import java.util.Map;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -20,15 +20,15 @@ public class CustomerPojo {
     private String ssn;
     private String createDate;
     private Boolean zelleEnrolled;
-    private Object country;
+    private CountryPojo country;
     private String state;
     private UserPojo user;
-    private Map<String,Object> account;
+    private ArrayList<Object> account;
 
     public CustomerPojo() {
     }
 
-    public CustomerPojo(Integer id, String firstName, String lastName, String middleInitial, String email, String mobilePhoneNumber, String phoneNumber, String zipCode, String address, String city, String ssn, String createDate, Boolean zelleEnrolled, Object country, String state, UserPojo user, Map<String, Object> account) {
+    public CustomerPojo(Integer id, String firstName, String lastName, String middleInitial, String email, String mobilePhoneNumber, String phoneNumber, String zipCode, String address, String city, String ssn, String createDate, Boolean zelleEnrolled, CountryPojo country, String state, UserPojo user, ArrayList<Object> account) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -152,11 +152,11 @@ public class CustomerPojo {
         this.zelleEnrolled = zelleEnrolled;
     }
 
-    public Object getCountry() {
+    public CountryPojo getCountry() {
         return country;
     }
 
-    public void setCountry(Object country) {
+    public void setCountry(CountryPojo country) {
         this.country = country;
     }
 
@@ -176,11 +176,11 @@ public class CustomerPojo {
         this.user = user;
     }
 
-    public Map<String, Object> getAccount() {
+    public ArrayList<Object> getAccount() {
         return account;
     }
 
-    public void setAccount(Map<String, Object> account) {
+    public void setAccount(ArrayList<Object> account) {
         this.account = account;
     }
 

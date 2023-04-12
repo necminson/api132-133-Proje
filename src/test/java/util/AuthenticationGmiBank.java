@@ -11,12 +11,13 @@ import static io.restassured.RestAssured.*;
 
     public class AuthenticationGmiBank {
 
+
         public static String generateToken() {
 
             Map<String, Object> postBody = new HashMap<>();
-            postBody.put("password", "2357");
+            postBody.put("password", "Mark.123");
             postBody.put("rememberMe", true);
-            postBody.put("username", "necminson");
+            postBody.put("username", "mark_twain");
 
             Response response = given().contentType(ContentType.JSON).body(postBody).post("https://gmibank.com/api/authenticate");
 
