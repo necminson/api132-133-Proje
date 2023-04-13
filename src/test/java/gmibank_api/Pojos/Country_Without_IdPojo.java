@@ -5,33 +5,20 @@ import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class CountryPojo {
-
-        private int id;
+public class Country_Without_IdPojo {
         private String name;
         private List<StatePojo> states;
 
-    public CountryPojo() {
+    public Country_Without_IdPojo() {
     }
 
-    public CountryPojo(String name, List<StatePojo> states) {
+    public Country_Without_IdPojo(String name, List<StatePojo> states) {
         this.name = name;
         this.states = states;
     }
 
-    public CountryPojo(int id, String name, List<StatePojo> states) {
-        this.id = id;
-        this.name = name;
-        this.states = states;
-    }
 
-    public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -51,9 +38,8 @@ public class CountryPojo {
 
     @Override
     public String toString() {
-        return "Country{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
+        return "Country_Without_IdPojo{" +
+                "name='" + name + '\'' +
                 ", states=" + states +
                 '}';
     }

@@ -2,9 +2,6 @@ package gmibank_api.Pojos;
 
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
-import java.util.ArrayList;
-import java.util.Map;
-
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CustomerPojo {
     private Integer id;
@@ -23,12 +20,12 @@ public class CustomerPojo {
     private CountryPojo country;
     private String state;
     private UserPojo user;
-    private ArrayList<Object> account;
+    private AccountsPojo account;
 
     public CustomerPojo() {
     }
 
-    public CustomerPojo(Integer id, String firstName, String lastName, String middleInitial, String email, String mobilePhoneNumber, String phoneNumber, String zipCode, String address, String city, String ssn, String createDate, Boolean zelleEnrolled, CountryPojo country, String state, UserPojo user, ArrayList<Object> account) {
+    public CustomerPojo(Integer id, String firstName, String lastName, String middleInitial, String email, String mobilePhoneNumber, String phoneNumber, String zipCode, String address, String city, String ssn, String createDate, Boolean zelleEnrolled, CountryPojo country, String state, UserPojo user, AccountsPojo account) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -176,11 +173,11 @@ public class CustomerPojo {
         this.user = user;
     }
 
-    public ArrayList<Object> getAccount() {
+    public AccountsPojo getAccount() {
         return account;
     }
 
-    public void setAccount(ArrayList<Object> account) {
+    public void setAccount(AccountsPojo account) {
         this.account = account;
     }
 

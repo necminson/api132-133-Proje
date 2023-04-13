@@ -16,7 +16,7 @@ public class GmiBankBaseUrl {
              setContentType(ContentType.JSON).
              addHeader("Authorization","Bearer " + generateToken()).
              setAccept(ContentType.JSON).
-             setBaseUri("https://www.gmibank.com/api").build();
+             setBaseUri("https://www.gmibank.com").build();
 
    }
 
