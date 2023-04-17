@@ -1,24 +1,29 @@
 package gmibank_api.Pojos;
 
-import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+
+
+
+
+
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Country_Without_IdPojo {
-        private String name;
-        private List<StatePojo> states;
+public class Country {
 
-    public Country_Without_IdPojo() {
+
+        private String name;
+        private List<States> states;
+
+    public Country() {
     }
 
-    public Country_Without_IdPojo(String name, List<StatePojo> states) {
+    public Country(String name, List<States> states) {
         this.name = name;
         this.states = states;
     }
-
-
-
 
     public String getName() {
         return name;
@@ -28,17 +33,17 @@ public class Country_Without_IdPojo {
         this.name = name;
     }
 
-    public Object getStates() {
+    public List<States> getStates() {
         return states;
     }
 
-    public void setStates(List<StatePojo> states) {
+    public void setStates(List<States> states) {
         this.states = states;
     }
 
     @Override
     public String toString() {
-        return "Country_Without_IdPojo{" +
+        return "CountryPojo{" +
                 "name='" + name + '\'' +
                 ", states=" + states +
                 '}';

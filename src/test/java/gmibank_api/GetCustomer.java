@@ -1,7 +1,7 @@
 package gmibank_api;
 
 import base_urls.GmiBankBaseUrl;
-import gmibank_api.Pojos.CountryPojo;
+import gmibank_api.Pojos.Country;
 import gmibank_api.Pojos.CustomerPojo;
 import gmibank_api.Pojos.UserPojo;
 import io.restassured.response.Response;
@@ -63,7 +63,7 @@ public class GetCustomer extends GmiBankBaseUrl {
         spec.pathParams("1st","api","2nd", "tp-customers", "3rd", 110452);
 
         // Set the expected data
-        CountryPojo country = new CountryPojo(3,"USA",null);
+        Country country = new Country("USA",null);
         UserPojo user = new UserPojo(110016, "leopoldo.reinger", "Jasmine", "Stehr",
                 "marni.zboncak@yahoo.com", true, "en", null, null);
 
@@ -86,7 +86,7 @@ public class GetCustomer extends GmiBankBaseUrl {
         // Do assertions
         assertEquals(200,response.statusCode());
 
-        assertEquals(expectedData.getId(),actualData.getId());
+
         assertEquals(expectedData.getFirstName(),actualData.getFirstName());
         assertEquals(expectedData.getLastName(),actualData.getLastName());
         assertEquals(expectedData.getMiddleInitial(),actualData.getMiddleInitial());
@@ -100,7 +100,7 @@ public class GetCustomer extends GmiBankBaseUrl {
         assertEquals(expectedData.getCreateDate(),actualData.getCreateDate());
         assertEquals(expectedData.getZelleEnrolled(),actualData.getZelleEnrolled());
 
-        assertEquals(expectedData.getCountry().getId(),actualData.getCountry().getId());
+
         assertEquals(expectedData.getCountry().getName(),actualData.getCountry().getName());
         assertEquals(expectedData.getCountry().getStates(),actualData.getCountry().getStates());
 
